@@ -1959,7 +1959,7 @@ osujs.Spinner = (function () {
     this.speed = 0;
 
     //FIXME: what should these be?
-    this.maxSpeed = 50;
+    this.maxSpeed = 10;
     this.speedScale = 0.05;
     this.friction = 0.7;
   };
