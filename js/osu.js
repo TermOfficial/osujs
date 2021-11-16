@@ -1985,7 +1985,6 @@ osujs.Spinner = (function () {
 
           if (Math.abs(this.speed) == this.maxSpeed) 
             console.log("TAICHOU, GENKAI DA!!!");
-             this.fadeOut(1); <!-- weird fix -->
         }
 
         this.speed *= this.friction;
@@ -1997,6 +1996,7 @@ osujs.Spinner = (function () {
 
         if (this.cumAngle/360 > this.length/600) 
           this.spinnerclear.visible = 1;
+          this.fadeOut(100); <!-- weird fix -->
 
         if (osujs.beatmap.getTime() > this.endTime) {
           var spins = this.cumAngle/360;
