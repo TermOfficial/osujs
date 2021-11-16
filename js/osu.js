@@ -1959,9 +1959,9 @@ osujs.Spinner = (function () {
     this.speed = 0;
 
     //FIXME: what should these be?
-    this.maxSpeed = 10;
-    this.speedScale = 0.05;
-    this.friction = 0.7;
+    this.maxSpeed = 40;
+    this.speedScale = 1;
+    this.friction = 0.3;
   };
 
   spinner.prototype.begin = function () {
@@ -1985,7 +1985,7 @@ osujs.Spinner = (function () {
 
           if (Math.abs(this.speed) == this.maxSpeed) 
             console.log("TAICHOU, GENKAI DA!!!");
-             this.fadeOut(100);
+             this.fadeOut(1); <!-- weird fix -->
         }
 
         this.speed *= this.friction;
