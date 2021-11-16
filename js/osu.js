@@ -1959,9 +1959,9 @@ osujs.Spinner = (function () {
     this.speed = 0;
 
     //FIXME: what should these be?
-    this.maxSpeed = 40;
-    this.speedScale = 1;
-    this.friction = 0.3;
+    this.maxSpeed = 10;
+    this.speedScale = 30;
+    this.friction = 0;
   };
 
   spinner.prototype.begin = function () {
@@ -1985,6 +1985,8 @@ osujs.Spinner = (function () {
 
           if (Math.abs(this.speed) == this.maxSpeed) 
             console.log("TAICHOU, GENKAI DA!!!");
+            await new Promise(resolve => setTimeout(resolve, 3000));
+            this.fadeOut(1); <!-- weird fix -->
         }
 
         this.speed *= this.friction;
@@ -1996,8 +1998,6 @@ osujs.Spinner = (function () {
 
         if (this.cumAngle/360 > this.length/600) 
           this.spinnerclear.visible = 1;
-          await new Promise(resolve => setTimeout(resolve, 3000));
-          this.fadeOut(100); <!-- weird fix -->
 
         if (osujs.beatmap.getTime() > this.endTime) {
           var spins = this.cumAngle/360;
