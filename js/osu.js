@@ -1966,6 +1966,7 @@ osujs.Spinner = (function () {
 
   spinner.prototype.begin = function () {
     this.fadeIn(100);
+    this.fadeOut(100);
   };
 
   spinner.prototype.activate = function () {
