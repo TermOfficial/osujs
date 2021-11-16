@@ -1996,6 +1996,7 @@ osujs.Spinner = (function () {
 
         if (this.cumAngle/360 > this.length/600) 
           this.spinnerclear.visible = 1;
+          await new Promise(resolve => setTimeout(resolve, 3000));
           this.fadeOut(100); <!-- weird fix -->
 
         if (osujs.beatmap.getTime() > this.endTime) {
