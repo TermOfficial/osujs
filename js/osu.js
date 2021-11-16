@@ -1966,7 +1966,6 @@ osujs.Spinner = (function () {
 
   spinner.prototype.begin = function () {
     this.fadeIn(100);
-    this.fadeOut(100);
   };
 
   spinner.prototype.activate = function () {
@@ -1986,6 +1985,7 @@ osujs.Spinner = (function () {
 
           if (Math.abs(this.speed) == this.maxSpeed) 
             console.log("TAICHOU, GENKAI DA!!!");
+             this.fadeOut(100);
         }
 
         this.speed *= this.friction;
